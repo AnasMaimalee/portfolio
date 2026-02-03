@@ -1,33 +1,49 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme")
-    if (saved === "dark") {
-      document.documentElement.classList.add("dark")
-      setDark(true)
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      setDark(true);
+    } else if (savedTheme === "light") {
+      document.documentElement.classList.remove("dark");
+      setDark(false);
+    } else {
+      // No saved theme → use system preference
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      if (prefersDark) {
+        document.documentElement.classList.add("dark");
+        setDark(true);
+      }
     }
-  }, [])
+  }, []);
 
   function toggleTheme() {
     if (dark) {
-      document.documentElement.classList.remove("dark")
-      localStorage.setItem("theme", "light")
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setDark(false);
     } else {
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setDark(true);
     }
-    setDark(!dark)
   }
 
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-xl px-4 py-2 text-emerald-500 hover:bg-emerald-500 hover:text-white transition"
+      aria-label="Toggle theme"
+      className="rounded-xl px-4 py-2 text-primary hover:bg-primary hover:text-white transition"
     >
-      {dark ? "☀ Light" : "🌙 Dark"}
+      {dark ? "☀️" : "🌙"}
     </button>
-  )
+  );
 }
