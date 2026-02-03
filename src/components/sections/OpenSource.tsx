@@ -58,7 +58,7 @@ export default function OpenSource() {
 
                 {/* STATUS BADGE */}
                 <span
-                  className={`absolute top-6 right-6 text-xs text-white px-3 py-1 rounded-full ${pkg.statusColor}`}
+                  className={`absolute top-6 right-6 text-xs text-white px-3 py-1 rounded-full ${pkg.statusColor}`} 
                 >
                   {pkg.status}
                 </span>
