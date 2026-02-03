@@ -13,7 +13,7 @@ export default function About() {
           </h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-            I’m the founder of <strong>CodeBridge Technology</strong>, specializing in
+            My name is<span className="italic font-bold text-emerald-500">  Anas Abdussalam (Maimalee)</span> , I’m the founder of <strong>CodeBridge Technology</strong>, specializing in
             building modern, high-performance web applications. My expertise is
             frontend development with React, backed by solid backend systems using
             Laravel and PHP.
