@@ -1,3 +1,4 @@
+import { useState } from "react";
 import FadeIn from "../ui/FadeIn";
 
 const packages = [
@@ -13,6 +14,16 @@ const packages = [
       "Clean and predictable JSON structure",
     ],
     tech: ["Laravel", "PHP"],
+    install: {
+      composer: "composer require maimalee/laravel-api-response",
+      manual: [
+        "Clone the repository",
+        "Copy files into your Laravel project",
+        "Register service provider if needed",
+      ],
+      docker: "docker exec -it app composer require maimalee/laravel-api-response",
+      publish: "php artisan vendor:publish --tag=api-response-config",
+    },
     link: "https://github.com/AnasMaimalee/laravel-api-response",
   },
   {
@@ -27,11 +38,30 @@ const packages = [
       "Biometric & Face ID login (planned)",
     ],
     tech: ["Laravel", "JWT", "Security"],
+    install: {
+      composer: "composer require maimalee/laravel-jwt-auth-kit",
+      manual: [
+        "Clone the repository",
+        "Run migrations",
+        "Configure JWT secrets",
+      ],
+      docker: "docker exec -it app composer require maimalee/laravel-jwt-auth-kit",
+      publish: "php artisan vendor:publish --tag=jwt-auth-config",
+    },
     link: "https://github.com/AnasMaimalee/laravel-jwt-auth-kit",
   },
 ];
 
 export default function OpenSource() {
+  const [activeTab, setActiveTab] = useState({});
+  const [copied, setCopied] = useState(null);
+
+  const copy = async (text, key) => {
+    await navigator.clipboard.writeText(text);
+    setCopied(key);
+    setTimeout(() => setCopied(null), 2000);
+  };
+
   return (
     <section id="open-source" className="py-32">
       <div className="max-w-7xl mx-auto px-6">
@@ -40,9 +70,7 @@ export default function OpenSource() {
         <FadeIn>
           <div className="max-w-2xl mb-20">
             <p className="section-subtitle mb-4">Open Source</p>
-            <h2 className="section-title">
-              Developer tools & packages
-            </h2>
+            <h2 className="section-title">Developer tools & packages</h2>
             <p className="text-gray-600 dark:text-gray-400 mt-4">
               I build reusable tools and packages to solve real-world problems
               and improve developer productivity.
@@ -52,62 +80,132 @@ export default function OpenSource() {
 
         {/* PACKAGES GRID */}
         <div className="grid md:grid-cols-2 gap-12">
-          {packages.map((pkg, index) => (
-            <FadeIn key={index} delay={index * 0.15}>
-              <div className="relative rounded-3xl border border-neutral-200 dark:border-neutral-800 p-8 bg-white dark:bg-neutral-950 shadow-lg hover:shadow-xl transition">
+          {packages.map((pkg, index) => {
+            const tab = activeTab[index] || "composer";
 
-                {/* STATUS BADGE */}
-                <span
-                  className={`absolute top-6 right-6 text-xs text-white px-3 py-1 rounded-full ${pkg.statusColor}`} 
-                >
-                  {pkg.status}
-                </span>
+            return (
+              <FadeIn key={index} delay={index * 0.15}>
+                <div className="relative rounded-3xl border border-neutral-200 dark:border-neutral-800 p-8 bg-white dark:bg-neutral-950 shadow-lg hover:shadow-xl transition">
 
-                <h3 className="text-xl font-bold mb-4">
-                  {pkg.name}
-                </h3>
+                  {/* STATUS */}
+                  <span
+                    className={`absolute top-6 right-6 text-xs text-white px-3 py-1 rounded-full ${pkg.statusColor}`}
+                  >
+                    {pkg.status}
+                  </span>
 
-                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                  {pkg.description}
-                </p>
+                  <h3 className="text-xl font-bold mb-4">{pkg.name}</h3>
 
-                <ul className="space-y-3 mb-6">
-                  {pkg.features.map((feature, i) => (
-                    <li key={i} className="flex gap-3">
-                      <span className="text-emerald-500">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    {pkg.description}
+                  </p>
 
-                {/* TECH STACK */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {pkg.tech.map((t, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 rounded-full text-sm
-                      bg-emerald-500/10 text-primary"
-                    >
-                      {t}
-                    </span>
-                  ))}
+                  <ul className="space-y-3 mb-6">
+                    {pkg.features.map((feature, i) => (
+                      <li key={i} className="flex gap-3">
+                        <span className="text-emerald-500">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* TECH */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {pkg.tech.map((t, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 rounded-full text-sm bg-emerald-500/10 text-emerald-600"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* INSTALL TABS */}
+                  <div className="mb-6">
+                    <div className="flex gap-2 mb-3">
+                      {["composer", "manual", "docker"].map((t) => (
+                        <button
+                          key={t}
+                          onClick={() =>
+                            setActiveTab({ ...activeTab, [index]: t })
+                          }
+                          className={`text-xs px-3 py-1 rounded-full capitalize transition
+                            ${
+                              tab === t
+                                ? "bg-emerald-500 text-white"
+                                : "bg-neutral-100 dark:bg-neutral-800 text-gray-500"
+                            }`}
+                        >
+                          {t}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* TAB CONTENT */}
+                    {tab !== "manual" ? (
+                      <div className="relative">
+                        <pre className="rounded-xl bg-neutral-100 dark:bg-neutral-900 px-4 py-3 text-sm overflow-x-auto">
+                          <code className="text-emerald-600">
+                            {pkg.install[tab]}
+                          </code>
+                        </pre>
+
+                        <button
+                          onClick={() =>
+                            copy(pkg.install[tab], `${index}-${tab}`)
+                          }
+                          className="absolute top-2 right-2 text-xs px-3 py-1 rounded-full bg-emerald-500 text-white"
+                        >
+                          {copied === `${index}-${tab}` ? "Copied!" : "Copy"}
+                        </button>
+                      </div>
+                    ) : (
+                      <ul className="list-disc pl-5 text-sm text-gray-600 dark:text-gray-400">
+                        {pkg.install.manual.map((step, i) => (
+                          <li key={i}>{step}</li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {/* PUBLISH */}
+                    {pkg.install.publish && tab === "composer" && (
+                      <div className="mt-4 relative">
+                        <pre className="rounded-xl bg-neutral-100 dark:bg-neutral-900 px-4 py-3 text-sm overflow-x-auto">
+                          <code className="text-emerald-600">
+                            {pkg.install.publish}
+                          </code>
+                        </pre>
+
+                        <button
+                          onClick={() =>
+                            copy(pkg.install.publish, `${index}-publish`)
+                          }
+                          className="absolute top-2 right-2 text-xs px-3 py-1 rounded-full bg-emerald-500 text-white"
+                        >
+                          {copied === `${index}-publish`
+                            ? "Copied!"
+                            : "Copy"}
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* LINK */}
+                  <a
+                    href={pkg.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:underline"
+                  >
+                    View on GitHub →
+                  </a>
                 </div>
-
-                {/* LINK */}
-                <a
-                  href={pkg.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:underline"
-                >
-                  View on GitHub →
-                </a>
-              </div>
-            </FadeIn>
-          ))}
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
-
