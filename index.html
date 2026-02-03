@@ -1,11 +1,55 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- BASIC -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-portfolio</title>
 
+    <!-- TITLE (VERY IMPORTANT FOR SEO) -->
+    <title>
+      CodeBridge Technology — Full-Stack Web Development (React, Vue, Laravel)
+    </title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="/code-bridge.jpg" />
+
+    <!-- PRIMARY SEO -->
+    <meta
+      name="description"
+      content="CodeBridge Technology is a software development company building modern, scalable web applications using React, Vue, Laravel, and PHP. We help businesses turn ideas into production-ready products."
+    />
+    <meta
+      name="keywords"
+      content="CodeBridge Technology, Code Bridge, Full Stack Developer, Web Development Company, React Developer, Vue Developer, Laravel Developer, PHP Developer, Software Company"
+    />
+    <meta name="author" content="CodeBridge Technology" />
+
+    <!-- GOOGLE / SEARCH ENGINE -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- OPEN GRAPH (WhatsApp, LinkedIn, Facebook) -->
+    <meta property="og:title" content="CodeBridge Technology" />
+    <meta
+      property="og:description"
+      content="We design and build modern web products with React, Vue, Laravel, and PHP."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/code-bridge.jpg" />
+    <meta property="og:site_name" content="CodeBridge Technology" />
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CodeBridge Technology" />
+    <meta
+      name="twitter:description"
+      content="Modern web development with React, Vue & Laravel."
+    />
+    <meta name="twitter:image" content="/code-bridge.jpg" />
+
+    <!-- THEME COLOR (BROWSER BAR) -->
+    <meta name="theme-color" content="#10b981" />
+
+    <!-- DARK MODE: SYSTEM FIRST -->
     <script>
       (function () {
         const theme = localStorage.getItem("theme");
@@ -17,10 +61,10 @@
           document.documentElement.classList.add("dark");
         }
       })();
-   </script>
-
+    </script>
   </head>
-  <body>
+
+  <body class="bg-white dark:bg-neutral-950 text-black dark:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
