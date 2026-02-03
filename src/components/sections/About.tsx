@@ -31,7 +31,7 @@ export default function About() {
             </div>
 
             <div className="px-6 py-4 rounded-2xl bg-neutral-100 dark:bg-neutral-900">
-              <p className="text-3xl font-bold text-emerald-600">20+</p>
+              <p className="text-3xl font-bold text-emerald-600">10+</p>
               <p className="text-sm text-gray-500">Projects Delivered</p>
             </div>
           </div>
