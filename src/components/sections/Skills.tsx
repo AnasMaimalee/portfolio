@@ -3,7 +3,6 @@ import FadeIn from "../ui/FadeIn";
 const skills = [
   { title: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Vue.js"] },
   { title: "Backend", items: ["Laravel", "PHP", "REST APIs", "Authentication"] },
-  { title: "Tools & Workflow", items: ["Git & GitHub", "Vite", "Vercel", "Figma"] },
 ];
 
 export default function Skills() {

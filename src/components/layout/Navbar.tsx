@@ -19,7 +19,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         
         {/* Logo */}
-        <img src="/code-bridge.png" alt="CodeBridge Technology" className="h-12" />
+        <img src="/code-bridge.jpg" alt="CodeBridge Technology" className="h-12 border rounded-full" />
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
