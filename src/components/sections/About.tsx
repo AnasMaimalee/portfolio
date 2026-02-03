@@ -13,9 +13,9 @@ export default function About() {
           </h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-            My name is<span className="italic font-bold text-emerald-500">  Anas Abdussalam (Maimalee)</span> , I’m the founder of <strong>CodeBridge Technology</strong>, specializing in
+            My name is<span className="italic font-bold text-emerald-600">  Anas Abdussalam (Maimalee)</span> , I’m the founder of <strong>CodeBridge Technology</strong>, specializing in
             building modern, high-performance web applications. My expertise is
-            frontend development with React, backed by solid backend systems using
+            frontend development with React and Vue, backed by solid backend systems using
             Laravel and PHP.
           </p>
 
@@ -43,13 +43,13 @@ export default function About() {
 
           <div className="relative grid gap-6">
             {/* IMAGE */}
-            {/* <div className="w-64 h-64 rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-xl mx-auto">
+            <div className="w-64 h-64 rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-xl mx-auto">
               <img
-                src="/me."
+                src="/my.jpg"
                 alt="Founder of CodeBridge Technology"
                 className="w-full h-full object-cover"
               />
-            </div> */}
+            </div>
 
             {/* HIGHLIGHTS */}
             <div className="rounded-3xl border border-neutral-200 dark:border-neutral-800 p-6 bg-white dark:bg-neutral-950 shadow-xl">
