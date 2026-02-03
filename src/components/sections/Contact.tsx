@@ -9,25 +9,25 @@ const contacts = [
   {
     name: "GitHub",
     icon: Github,
-    href: "https://github.com/yourusername",
+    href: "https://github.com/AnasMaimalee",
     color: "hover:text-gray-900 dark:hover:text-white",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://linkedin.com/in/anas-abdussalam-91a66a374",
     color: "hover:text-[#0A66C2]",
   },
   {
     name: "WhatsApp",
     icon: MessageCircle,
-    href: "https://wa.me/234XXXXXXXXXX",
+    href: "https://wa.me/2348123442014",
     color: "hover:text-[#25D366]",
   },
   {
     name: "Email",
     icon: Mail,
-    href: "mailto:youremail@gmail.com",
+    href: "mailto:anasment6@gmail.com",
     color: "hover:text-[#EA4335]",
   },
 ]

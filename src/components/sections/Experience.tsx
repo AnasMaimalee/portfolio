@@ -40,32 +40,31 @@ export default function Experience() {
         </div>
 
         {/* TIMELINE */}
-        <div className="relative border-l border-neutral-300 dark:border-neutral-700 ml-4">
-          {experiences.map((exp, index) => (
-            <div key={index} className="mb-16 ml-10 relative">
-              
-              {/* DOT */}
-              <div className="absolute -left-[14px] top-1.5 w-7 h-7 rounded-full bg-primary border-4 border-white dark:border-neutral-950" />
+        <div className="relative border-l border-neutral-300 dark:border-neutral-700 ml-8">
+            {experiences.map((exp, index) => (
+                <div key={index} className="mb-16 pl-8 relative">
+                
+                {/* DOT */}
+                <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 rounded-full bg-primary border-2 border-white dark:border-neutral-950" />
 
-              <span className="text-sm font-semibold text-primary">
-                {exp.period}
-              </span>
+                <span className="text-sm font-semibold text-primary">
+                    {exp.period}
+                </span>
 
-              <h3 className="text-2xl font-bold mt-2">
-                {exp.title}
-              </h3>
+                <h3 className="text-2xl font-bold mt-2">
+                    {exp.title}
+                </h3>
 
-              <p className="text-gray-500 dark:text-gray-400 mb-4">
-                {exp.company}
-              </p>
+                <p className="text-gray-500 dark:text-gray-400 mb-4">
+                    {exp.company}
+                </p>
 
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
-                {exp.description}
-              </p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
+                    {exp.description}
+                </p>
+                </div>
+            ))}
             </div>
-          ))}
-        </div>
-
       </div>
     </section>
   )
