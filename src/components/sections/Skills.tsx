@@ -1,9 +1,38 @@
 import FadeIn from "../ui/FadeIn";
 
 const skills = [
-  { title: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Vue.js"] },
-  { title: "Backend", items: ["Laravel", "PHP", "REST APIs", "Authentication"] },
+  {
+    title: "Frontend",
+    items: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vue.js",
+      "Responsive & Accessible UI Design",
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      "Laravel",
+      "PHP",
+      "REST API Development",
+      "Authentication & Authorization",
+    ],
+  },
+  {
+    title: "Database",
+    items: [
+      "MySQL (Primary – Production Use)",
+      "PostgreSQL (Familiarity)",
+      "SQLite (Familiarity)",
+      "MongoDB (Basic Knowledge)",
+    ],
+  },
+  
 ];
+
+
 
 export default function Skills() {
   return (
