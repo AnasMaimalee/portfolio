@@ -50,34 +50,45 @@ export default function Education() {
 
         {/* TIMELINE */}
         <div className="relative border-l border-neutral-300 dark:border-neutral-700 ml-8">
-          {education.map((edu, index) => (
-            <FadeIn key={index}>
-              <div className="mb-16 pl-8 relative">
+            {education.map((edu, index) => (
+                <FadeIn key={index}>
+                <div className="mb-16 pl-8 relative">
 
-                {/* DOT */}
-                <div className="absolute -left-[14px] top-1.5 w-7 h-7 rounded-full bg-primary border-4 border-white dark:border-neutral-950" />
+                    {/* DOT (line fully masked) */}
+                    <div className="absolute -left-[14px] top-1.5 w-7 h-7">
+                    {/* line cover */}
+                    <div className="absolute inset-0 rounded-full bg-white dark:bg-neutral-950" />
 
-                <span className="text-sm font-semibold text-primary">
-                  {edu.period}
-                </span>
+                    {/* blinking dot */}
+                    <div
+                        className="relative w-7 h-7 rounded-full 
+                        bg-primary border-4 border-white dark:border-neutral-950 
+                        animate-pulse shadow-[0_0_12px_rgba(59,130,246,0.6)]"
+                    />
+                    </div>
 
-                <h3 className="text-2xl font-bold mt-2">
-                  {edu.title}
-                </h3>
+                    <span className="text-sm font-semibold text-primary">
+                    {edu.period}
+                    </span>
 
-                <p className="text-gray-500 dark:text-gray-400">
-                  {edu.institution}
-                </p>
+                    <h3 className="text-2xl font-bold mt-2">
+                    {edu.title}
+                    </h3>
 
-                {edu.highlight && (
-                  <span className="inline-block mt-3 px-4 py-1 rounded-full text-sm font-semibold bg-emerald-500/10 text-emerald-600">
-                    {edu.highlight}
-                  </span>
-                )}
-              </div>
-            </FadeIn>
-          ))}
+                    <p className="text-gray-500 dark:text-gray-400">
+                    {edu.institution}
+                    </p>
+
+                    {edu.highlight && (
+                    <span className="inline-block mt-3 px-4 py-1 rounded-full text-sm font-semibold bg-emerald-500/10 text-emerald-600">
+                        {edu.highlight}
+                    </span>
+                    )}
+                </div>
+                </FadeIn>
+            ))}
         </div>
+
 
       </div>
     </section>
