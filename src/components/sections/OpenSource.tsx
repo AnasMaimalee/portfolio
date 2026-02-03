@@ -1,6 +1,16 @@
 import { useState } from "react";
 import FadeIn from "../ui/FadeIn";
 
+// ✅ Type definitions
+interface InstallMethods {
+  composer: string;
+  manual: string[];
+  docker: string;
+  publish?: string;
+}
+
+
+
 const packages = [
   {
     name: "Laravel API Response",
@@ -53,10 +63,11 @@ const packages = [
 ];
 
 export default function OpenSource() {
-  const [activeTab, setActiveTab] = useState({});
-  const [copied, setCopied] = useState(null);
+  const [activeTab, setActiveTab] = useState<Record<number, string>>({});
+  const [copied, setCopied] = useState<string | null>(null);
 
-  const copy = async (text, key) => {
+  // ✅ Fixed: Typed parameters
+  const copy = async (text: string, key: string) => {
     await navigator.clipboard.writeText(text);
     setCopied(key);
     setTimeout(() => setCopied(null), 2000);
@@ -65,7 +76,6 @@ export default function OpenSource() {
   return (
     <section id="open-source" className="py-32">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* HEADER */}
         <FadeIn>
           <div className="max-w-2xl mb-20">
@@ -81,12 +91,12 @@ export default function OpenSource() {
         {/* PACKAGES GRID */}
         <div className="grid md:grid-cols-2 gap-12">
           {packages.map((pkg, index) => {
-            const tab = activeTab[index] || "composer";
+            // ✅ Fixed: Explicit type assertion
+            const tab: string = activeTab[index] || "composer";
 
             return (
               <FadeIn key={index} delay={index * 0.15}>
                 <div className="relative rounded-3xl border border-neutral-200 dark:border-neutral-800 p-8 bg-white dark:bg-neutral-950 shadow-lg hover:shadow-xl transition">
-
                   {/* STATUS */}
                   <span
                     className={`absolute top-6 right-6 text-xs text-white px-3 py-1 rounded-full ${pkg.statusColor}`}
@@ -95,7 +105,6 @@ export default function OpenSource() {
                   </span>
 
                   <h3 className="text-xl font-bold mb-4">{pkg.name}</h3>
-
                   <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                     {pkg.description}
                   </p>
@@ -147,13 +156,13 @@ export default function OpenSource() {
                       <div className="relative">
                         <pre className="rounded-xl bg-neutral-100 dark:bg-neutral-900 px-4 py-3 text-sm overflow-x-auto">
                           <code className="text-emerald-600">
-                            {pkg.install[tab]}
+                            {pkg.install[tab as keyof InstallMethods]}
                           </code>
                         </pre>
 
                         <button
                           onClick={() =>
-                            copy(pkg.install[tab], `${index}-${tab}`)
+                            copy(pkg.install[tab as keyof InstallMethods] as string, `${index}-${tab}`)
                           }
                           className="absolute top-2 right-2 text-xs px-3 py-1 rounded-full bg-emerald-500 text-white"
                         >
@@ -179,13 +188,11 @@ export default function OpenSource() {
 
                         <button
                           onClick={() =>
-                            copy(pkg.install.publish, `${index}-publish`)
+                            copy(pkg.install.publish!, `${index}-publish`)
                           }
                           className="absolute top-2 right-2 text-xs px-3 py-1 rounded-full bg-emerald-500 text-white"
                         >
-                          {copied === `${index}-publish`
-                            ? "Copied!"
-                            : "Copy"}
+                          {copied === `${index}-publish` ? "Copied!" : "Copy"}
                         </button>
                       </div>
                     )}
@@ -209,3 +216,4 @@ export default function OpenSource() {
     </section>
   );
 }
+
