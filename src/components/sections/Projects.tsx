@@ -11,7 +11,7 @@ const projects = [
     category: "Education & Government Services",
     description:
       "A third-party system built to integrate with JAMB-related services, enabling secure data handling, validation workflows, and seamless user interactions.",
-    tech: ["React", "Laravel", "API Integration"],
+    tech: ["React", "Laravel", "API Integration", "Payment Integration"],
   },
   {
     title: "Data Purchasing & E-Services Platform",
