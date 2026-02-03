@@ -26,6 +26,7 @@ export default function Header() {
           <a href="#about" className="text-gray-800 dark:text-gray-100 font-medium hover:text-emerald-500 transition">About</a>
           <a href="#projects" className="text-gray-800 dark:text-gray-100 font-medium hover:text-emerald-500 transition">Projects</a>
           <a href="#skills" className="text-gray-800 dark:text-gray-100 font-medium hover:text-emerald-500 transition">Skills</a>
+          <a href="#education" className="text-gray-800 dark:text-gray-100 font-medium hover:text-emerald-500 transition">Education</a>
           <a href="#contact" className="text-gray-800 dark:text-gray-100 font-medium hover:text-emerald-500 transition">Contact</a>
           <ThemeToggle />
         </nav>
@@ -45,6 +46,7 @@ export default function Header() {
           <a href="#about" onClick={() => setMenuOpen(false)} className="text-gray-800 dark:text-gray-100 font-medium text-lg">About</a>
           <a href="#projects" onClick={() => setMenuOpen(false)} className="text-gray-800 dark:text-gray-100 font-medium text-lg">Projects</a>
           <a href="#skills" onClick={() => setMenuOpen(false)} className="text-gray-800 dark:text-gray-100 font-medium text-lg">Skills</a>
+          <a href="#education" onClick={() => setMenuOpen(false)} className="text-gray-800 dark:text-gray-100 font-medium text-lg">Education</a>
           <a href="#contact" onClick={() => setMenuOpen(false)} className="text-gray-800 dark:text-gray-100 font-medium text-lg">Contact</a>
         </div>
       )}

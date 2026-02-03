@@ -8,6 +8,7 @@ import Projects from "./components/sections/Projects"
 import Experience from "./components/sections/Experience"
 import Contact from "./components/sections/Contact"
 import OpenSource from "./components/sections/OpenSource"
+import Education from "./components/sections/Education"
 
 export default function App() {
   return (
@@ -18,9 +19,10 @@ export default function App() {
         <Hero />
         <About />
         <Skills />
+        <Education />
         <Projects />
-        <OpenSource />
         <Experience />
+        <OpenSource />
         <Contact />
       </main>
 
