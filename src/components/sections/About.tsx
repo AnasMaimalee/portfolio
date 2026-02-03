@@ -43,13 +43,13 @@ export default function About() {
 
           <div className="relative grid gap-6">
             {/* IMAGE */}
-            <div className="w-64 h-64 rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-xl mx-auto">
+            {/* <div className="w-64 h-64 rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-xl mx-auto">
               <img
-                src="/my.png"
+                src="/me."
                 alt="Founder of CodeBridge Technology"
                 className="w-full h-full object-cover"
               />
-            </div>
+            </div> */}
 
             {/* HIGHLIGHTS */}
             <div className="rounded-3xl border border-neutral-200 dark:border-neutral-800 p-6 bg-white dark:bg-neutral-950 shadow-xl">
