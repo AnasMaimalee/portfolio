@@ -8,7 +8,7 @@ export default function Hero() {
           <img
             src="/code-bridge.jpg"
             alt="CodeBridge Technology"
-            className="h-36 mx-auto mb-8 border rounded-full"
+            className="h-56 mx-auto mb-8 border rounded-full"
           />
         </FadeIn>
 
