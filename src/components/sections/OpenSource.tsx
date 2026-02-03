@@ -85,7 +85,8 @@ export default function OpenSource() {
                   {pkg.tech.map((t, i) => (
                     <span
                       key={i}
-                      className="text-xs px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 text-gray-600 dark:text-gray-400"
+                      className="px-3 py-1 rounded-full text-sm
+                      bg-emerald-500/10 text-primary"
                     >
                       {t}
                     </span>
