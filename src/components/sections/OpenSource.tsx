@@ -31,7 +31,7 @@ const packages = [
         "Copy files into your Laravel project",
         "Register service provider if needed",
       ],
-      docker: "docker exec -it app composer require maimalee/laravel-api-response",
+      // docker: "docker exec -it app composer require maimalee/laravel-api-response",
       publish: "php artisan vendor:publish --tag=api-response-config",
     },
     link: "https://github.com/AnasMaimalee/laravel-api-response",
@@ -55,7 +55,7 @@ const packages = [
         "Run migrations",
         "Configure JWT secrets",
       ],
-      docker: "docker exec -it app composer require maimalee/laravel-jwt-auth-kit",
+      // docker: "docker exec -it app composer require maimalee/laravel-jwt-auth-kit",
       publish: "php artisan vendor:publish --tag=jwt-auth-config",
     },
     link: "https://github.com/AnasMaimalee/laravel-jwt-auth-kit",
@@ -173,9 +173,9 @@ return (
                         {pkg.install.manual.slice(0, 3).map((step, i) => (
                           <li key={i} className="line-clamp-1">{step}</li>
                         ))}
-                        {pkg.install.manual.length > 3 && (
+                        {/* {pkg.install.manual.length > 3 && (
                           <li className="text-xs italic text-gray-500">+{pkg.install.manual.length - 3} more steps</li>
-                        )}
+                        )} */}
                       </ul>
                     )}
 

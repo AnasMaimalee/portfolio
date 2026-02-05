@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+
 export default function About() {
+  const [open, setOpen] = useState(false);
+
   return (
     <section id="about" className="py-32">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
@@ -13,10 +19,12 @@ export default function About() {
           </h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-            My name is<span className="italic font-bold text-emerald-600">  Anas Abdussalam (Maimalee)</span> , I’m the founder of <strong>CodeBridge Technology</strong>, specializing in
-            building modern, high-performance web applications. My expertise is
-            frontend development with React and Vue, backed by solid backend systems using
-            Laravel and PHP.
+            My name is
+            <span className="italic font-bold text-emerald-600">
+              {" "}Anas Abdussalam (Maimalee)
+            </span>
+            , I’m the founder of <strong>CodeBridge Technology</strong>, specializing in
+            building modern, high-performance web applications.
           </p>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
@@ -37,13 +45,17 @@ export default function About() {
           </div>
         </div>
 
-        {/* RIGHT — IMAGE + HIGHLIGHTS */}
+        {/* RIGHT — IMAGE */}
         <div className="relative flex justify-center">
           <div className="absolute -inset-10 bg-emerald-500/20 blur-3xl rounded-full" />
 
           <div className="relative grid gap-6">
-            {/* IMAGE */}
-            <div className="w-64 h-64 rounded-full overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-xl mx-auto">
+
+            {/* Avatar */}
+            <div
+              onClick={() => setOpen(true)}
+              className="w-64 h-64 rounded-full overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-xl mx-auto cursor-pointer hover:scale-105 transition"
+            >
               <img
                 src="/mee.jpeg"
                 alt="Founder of CodeBridge Technology"
@@ -51,7 +63,21 @@ export default function About() {
               />
             </div>
 
-            {/* HIGHLIGHTS */}
+            {/* Fullscreen Modal */}
+            {open && (
+              <div
+                onClick={() => setOpen(false)}
+                className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+              >
+                <img
+                  src="/mee.jpeg"
+                  alt="Founder of CodeBridge Technology"
+                  className="max-w-full max-h-full rounded-xl shadow-2xl"
+                />
+              </div>
+            )}
+
+            {/* Highlights */}
             <div className="rounded-3xl border border-neutral-200 dark:border-neutral-800 p-6 bg-white dark:bg-neutral-950 shadow-xl">
               <ul className="space-y-4 text-sm">
                 <li className="flex gap-3">
@@ -68,10 +94,11 @@ export default function About() {
                 </li>
               </ul>
             </div>
+
           </div>
         </div>
 
       </div>
     </section>
-  )
+  );
 }
