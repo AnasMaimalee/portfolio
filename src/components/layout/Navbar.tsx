@@ -104,13 +104,13 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-neutral-950 shadow-md flex flex-col items-center py-6 space-y-6">
+        <div className="md:hidden bg-white dark:bg-neutral-950 shadow-md flex flex-col items-start  py-6 space-y-6">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               onClick={() => setMenuOpen(false)}
-              className={`text-lg font-medium ${
+              className={`text-lg font-medium ms-5 ${
                 active === item.id
                   ? "text-emerald-500"
                   : "text-gray-800 dark:text-gray-100"
