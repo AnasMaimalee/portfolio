@@ -24,7 +24,7 @@ export default function QuickRequest() {
     setShowError(false);
 
     try {
-      const response = await fetch("https://celebs-barbie-dropped-contain.trycloudflare.com/api/feedback", {
+      const response = await fetch("https://fatidic-elin-unelective.ngrok-free.dev/api/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
