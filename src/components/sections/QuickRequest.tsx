@@ -24,7 +24,7 @@ export default function QuickRequest() {
     setShowError(false);
 
     try {
-      const response = await fetch("https://fatidic-elin-unelective.ngrok-free.dev/api/feedback", {
+      const response = await fetch("https://signatures-please-suggestion-paris.trycloudflare.com/api/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
