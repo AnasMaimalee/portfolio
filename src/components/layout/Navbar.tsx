@@ -54,7 +54,7 @@ export default function Header() {
 
         {/* Logo */}
         <img
-          src="/code-bridge.jpg"
+          src="/code-bridge.jpeg"
           alt="CodeBridge Technology"
           className="h-12 rounded-full border"
         />

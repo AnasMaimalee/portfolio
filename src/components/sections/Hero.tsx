@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="max-w-4xl text-center">
         <FadeIn delay={0}>
           <img
-            src="/code-bridge.jpg"
+            src="/code-bridge.jpeg"
             alt="CodeBridge Technology"
             className="h-56 mx-auto mb-8 border rounded-full"
           />
