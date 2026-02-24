@@ -24,7 +24,7 @@ export default function QuickRequest() {
     setShowError(false);
 
     try {
-      const response = await fetch("https://sie-hall-miles-oregon.trycloudflare.com/api/feedback", {
+      const response = await fetch("https://man-custom-for-listening.trycloudflare.com/api/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
