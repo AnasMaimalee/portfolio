@@ -24,7 +24,7 @@ export default function QuickRequest() {
     setShowError(false);
 
     try {
-      const response = await fetch("https://realty-brought-asia-remembered.trycloudflare.com/api/feedback", {
+      const response = await fetch("https://technique-blackberry-propose-rhythm.trycloudflare.com/api/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
