@@ -16,7 +16,7 @@ import QuickRequest from "./components/sections/QuickRequest";
 export default function App() {
 
   useEffect(() => {
-    fetch("https://proudly-gage-eur-dogs.trycloudflare.com/api/track-visitor", {
+    fetch("https://realty-brought-asia-remembered.trycloudflare.com/api/track-visitor", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
