@@ -24,7 +24,7 @@ export default function QuickRequest() {
     setShowError(false);
 
     try {
-      const response = await fetch("https://mathematical-vatican-slots-alice.trycloudflare.com/api/feedback", {
+      const response = await fetch("https://pdt-pens-hawaii-editions.trycloudflare.com/api/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
