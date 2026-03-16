@@ -11,7 +11,6 @@ import Experience from "./components/sections/Experience";
 import Contact from "./components/sections/Contact";
 import OpenSource from "./components/sections/OpenSource";
 import Education from "./components/sections/Education";
-import QuickRequest from "./components/sections/QuickRequest";
 
 export default function App() {
 
