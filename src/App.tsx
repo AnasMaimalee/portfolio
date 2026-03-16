@@ -38,7 +38,6 @@ export default function App() {
         <Projects />
         <OpenSource />
         <Education />
-        <QuickRequest />
         <Contact />
       </main>
 
