@@ -133,7 +133,7 @@ export default function Projects() {
               {/* CTA */}
               <div className="opacity-0 group-hover:opacity-100 transition">
                 <span className="inline-flex items-center gap-2 text-emerald-600 font-semibold">
-                  View case study →
+                 
                 </span>
               </div>
 
