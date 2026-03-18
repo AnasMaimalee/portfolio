@@ -22,7 +22,7 @@ export default function Hero() {
 
         <FadeIn delay={0.4}>
           <p className="text-xs sm:text-sm md:text-2xl text-gray-600 dark:text-gray-400 mb-10 max-w-3xl mx-auto">
-            We design and develop high-quality web applications using React, Vue, Laravel, and PHP — focused on performance, scalability, and business impact.
+            I design and develop high-quality web applications using React, Vue, Laravel, and PHP — focused on performance, scalability, and business impact.
           </p>
         </FadeIn>
 
@@ -32,13 +32,13 @@ export default function Hero() {
               href="#projects"
               className="px-6 py-2 sm:px-8 sm:py-4 rounded-xl bg-primary text-white font-semibold text-sm sm:text-base transition hover:scale-[1.03] hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.6)]"
             >
-              View Our Work
+              View My Work
             </a>
             <a
               href="#contact"
               className="px-6 py-2 sm:px-8 sm:py-4 rounded-xl border border-primary text-primary font-semibold text-sm sm:text-base transition hover:bg-primary hover:text-white"
             >
-              Work With Us
+              Work With Me
             </a>
           </div>
         </FadeIn>
