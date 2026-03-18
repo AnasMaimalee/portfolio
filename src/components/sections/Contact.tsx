@@ -15,7 +15,7 @@ const contacts = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/anas-abdussalam-91a66a374",
+    href: "https://linkedin.com/in/anas-maimalee",
     color: "hover:text-[#0A66C2]",
   },
   {
