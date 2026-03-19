@@ -15,7 +15,7 @@ import Education from "./components/sections/Education";
 export default function App() {
 
   useEffect(() => {
-    fetch("https://ours-significant-eve-distribute.trycloudflare.com/api/track-visitor", {
+    fetch("https://scholarships-niagara-quotes-trip.trycloudflare.com/api/track-visitor", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
