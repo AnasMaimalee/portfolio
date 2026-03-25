@@ -57,7 +57,7 @@ export default function About() {
               className="w-64 h-64 rounded-full overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-xl mx-auto cursor-pointer hover:scale-105 transition"
             >
               <img
-                src="/mee.jpeg"
+                src="/my-pic.jpeg"
                 alt="Founder of CodeBridge Technology"
                 className="w-full h-full object-cover"
               />
@@ -70,7 +70,7 @@ export default function About() {
                 className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
               >
                 <img
-                  src="/mee.jpeg"
+                  src="/my-pic.jpeg"
                   alt="Founder of CodeBridge Technology"
                   className="max-w-full max-h-full rounded-xl shadow-2xl"
                 />
