@@ -24,7 +24,7 @@ export default function QuickRequest() {
     setShowError(false);
 
     try {
-      const response = await fetch("https://sample-owns-firewall-enough.trycloudflare.com/api/feedback", {
+      const response = await fetch("https://api.eduoasis.com.ng/api/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
+import QuickRequest from "./components/sections/QuickRequest";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import Skills from "./components/sections/Skills";
@@ -15,7 +16,7 @@ import Education from "./components/sections/Education";
 export default function App() {
 
   useEffect(() => {
-    fetch("https://sample-owns-firewall-enough.trycloudflare.com/api/track-visitor", {
+    fetch("https://api.eduoasis.com.ng/api/track-visitor", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,6 +39,7 @@ export default function App() {
         <OpenSource />
         <Education />
         <Contact />
+        <QuickRequest />
       </main>
 
       <Footer />
